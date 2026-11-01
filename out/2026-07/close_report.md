@@ -6,14 +6,14 @@ Period end 2026-07-31. Prior closed period 2026-06. Sources: synthetic_ps_recon_
 
 ## Totals
 
-| Currency | Items | Contract value | Recognised to date | Recognised in 2026-07 | Planned to date |
+| Currency | Items | Contract value | Recognized to date | Recognized in 2026-07 | Planned to date |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | CAD | 1 | 92,000.00 | 52,800.00 | 6,800.00 | 52,800.00 |
 | EUR | 2 | 158,000.00 | 105,055.48 | 11,252.74 | 79,400.00 |
 | GBP | 2 | 136,000.00 | 76,121.95 | 9,975.61 | 79,400.00 |
 | USD | 43 | 2,954,000.00 | 2,078,642.36 | 242,669.97 | 2,036,000.00 |
 
-USD view at the latest available rates: 2,327,087.94 recognised to date, 272,424.20 in 2026-07. Rates for CAD, EUR, GBP are carried from the prior month end; see exceptions.
+USD view at the latest available rates: 2,327,087.94 recognized to date, 272,424.20 in 2026-07. Rates for CAD, EUR, GBP are carried from the prior month end; see exceptions.
 
 ## What moved, and why
 
@@ -32,15 +32,15 @@ Grouped by cause. Amounts are the effect on the period in the item's own currenc
 
 **Hours split across items by rule, not by the timesheet** (`HOURS_ALLOCATED`)
 
-- PX-12 / CI-PX-12A: 109 of 109 billable hours on PX-12 were placed on CI-PX-12A because CI-PX-12B is already fully recognised; the 2026-07 timesheets name the project but not the item. A plain split by planned hours (500:300) would give CI-PX-12A 68.12 h and move its recognised revenue by -8,175.00 USD. **21,800.00 USD**.
+- PX-12 / CI-PX-12A: 109 of 109 billable hours on PX-12 were placed on CI-PX-12A because CI-PX-12B is already fully recognized; the 2026-07 timesheets name the project but not the item. A plain split by planned hours (500:300) would give CI-PX-12A 68.12 h and move its recognized revenue by -8,175.00 USD. **21,800.00 USD**.
   Question: How should PX-12 hours be split between CI-PX-12A and CI-PX-12B?
-- PX-21 / CI-PX-21A: 25.37 of 40 billable hours on PX-21 were placed on CI-PX-21A in proportion to the hours each item still has to deliver; the 2026-07 timesheets name the project but not the item. A plain split by planned hours (300:150) would give CI-PX-21A 26.67 h and move its recognised revenue by 260.16 USD. **5,073.17 USD**.
+- PX-21 / CI-PX-21A: 25.37 of 40 billable hours on PX-21 were placed on CI-PX-21A in proportion to the hours each item still has to deliver; the 2026-07 timesheets name the project but not the item. A plain split by planned hours (300:150) would give CI-PX-21A 26.67 h and move its recognized revenue by 260.16 USD. **5,073.17 USD**.
   Question: How should PX-21 hours be split between CI-PX-21A and CI-PX-21B?
-- PX-21 / CI-PX-21B: 14.63 of 40 billable hours on PX-21 were placed on CI-PX-21B in proportion to the hours each item still has to deliver; the 2026-07 timesheets name the project but not the item. A plain split by planned hours (300:150) would give CI-PX-21B 13.33 h and move its recognised revenue by -260.16 USD. **2,926.83 USD**.
+- PX-21 / CI-PX-21B: 14.63 of 40 billable hours on PX-21 were placed on CI-PX-21B in proportion to the hours each item still has to deliver; the 2026-07 timesheets name the project but not the item. A plain split by planned hours (300:150) would give CI-PX-21B 13.33 h and move its recognized revenue by -260.16 USD. **2,926.83 USD**.
   Question: How should PX-21 hours be split between CI-PX-21B and CI-PX-21A?
-- PX-23 / CI-PX-23A: 16.69 of 26 billable hours on PX-23 were placed on CI-PX-23A in proportion to the hours each item still has to deliver; the 2026-07 timesheets name the project but not the item. A plain split by planned hours (320:160) would give CI-PX-23A 17.33 h and move its recognised revenue by 128.15 USD. **4,365.76 USD**.
+- PX-23 / CI-PX-23A: 16.69 of 26 billable hours on PX-23 were placed on CI-PX-23A in proportion to the hours each item still has to deliver; the 2026-07 timesheets name the project but not the item. A plain split by planned hours (320:160) would give CI-PX-23A 17.33 h and move its recognized revenue by 128.15 USD. **4,365.76 USD**.
   Question: How should PX-23 hours be split between CI-PX-23A and CI-PX-23B?
-- PX-23 / CI-PX-23B: 9.31 of 26 billable hours on PX-23 were placed on CI-PX-23B in proportion to the hours each item still has to deliver; the 2026-07 timesheets name the project but not the item. A plain split by planned hours (320:160) would give CI-PX-23B 8.67 h and move its recognised revenue by -128.15 USD. **2,434.24 USD**.
+- PX-23 / CI-PX-23B: 9.31 of 26 billable hours on PX-23 were placed on CI-PX-23B in proportion to the hours each item still has to deliver; the 2026-07 timesheets name the project but not the item. A plain split by planned hours (320:160) would give CI-PX-23B 8.67 h and move its recognized revenue by -128.15 USD. **2,434.24 USD**.
   Question: How should PX-23 hours be split between CI-PX-23B and CI-PX-23A?
 
 **Approved sales order with no project and no contract item** (`ORPHAN_SALES_ORDER`)
@@ -51,15 +51,15 @@ Grouped by cause. Amounts are the effect on the period in the item's own currenc
 **Return or credit memo not reflected in the schedule** (`UNAPPLIED_RMA`)
 
 - PX-20: RMA-PX-20 (RET-PX20, 2026-06-24, 'partial scope return') for -3,000.00 USD has no matching credit in the schedule (credit memo: CM-PX20; note: unresolved cross-reference to prior SO). **-3,000.00 USD**.
-  Question: Should RMA-PX-20 reduce recognised revenue on PX-20, and against which item?
+  Question: Should RMA-PX-20 reduce recognized revenue on PX-20, and against which item?
 
 ### For review
 
-**Acceptance confirmed; remaining contract value recognised** (`ACCEPTANCE_RELEASE`)
+**Acceptance confirmed; remaining contract value recognized** (`ACCEPTANCE_RELEASE`)
 
 - PX-02 / CI-PX-02: Bramwell Logistics | Core Delivery: acceptance confirmed 2026-07-09; CI-PX-02 moves from 83,600.00 USD to the full 88,000.00 USD. **4,400.00 USD**.
 
-**Item became effective; first revenue recognised** (`FIRST_RECOGNITION`)
+**Item became effective; first revenue recognized** (`FIRST_RECOGNITION`)
 
 - PX-29 / CI-PX-29: CI-PX-29 became effective 2026-07-01; first recognition 9,400.00 USD on 47 cumulative billable hours. **9,400.00 USD**.
 - PX-30 / CI-PX-30: CI-PX-30 became effective 2026-07-01; first recognition 7,400.00 USD on 37 cumulative billable hours. **7,400.00 USD**.
@@ -86,7 +86,7 @@ Grouped by cause. Amounts are the effect on the period in the item's own currenc
 - PX-22-CR / CI-PX-22-CR: CI-PX-22-CR has 63 billable hours against an estimate of 60; planned value 12,600.00 USD now exceeds the 12,000.00 USD contract. **600.00 USD**.
   Question: Is a change order or a revised estimate expected for this overrun?
 
-**Milestone confirmed; next tranche recognised** (`MILESTONE_RELEASE`)
+**Milestone confirmed; next tranche recognized** (`MILESTONE_RELEASE`)
 
 - PX-09 / CI-PX-09: Ironwood Freight | Platform Build: milestone confirmed; CI-PX-09 releases tranche 2 of 2, 40,000.00 USD. **40,000.00 USD**.
 - PX-10 / CI-PX-10: Juniper Analytics | Platform Build: milestone confirmed; CI-PX-10 releases tranche 2 of 2, 30,000.00 USD. **30,000.00 USD**.
@@ -96,25 +96,25 @@ Grouped by cause. Amounts are the effect on the period in the item's own currenc
 - PX-38 / CI-PX-38-CR: CI-PX-38-CR (PX-38 paid change request) is new this period: 10,000.00 USD contract, 50 planned hours, effective 2026-07-15, method fixed fee, hours against estimate at completion. **1,600.00 USD**.
 - PX-43 / CI-PX-43: CI-PX-43 (Thistledown Analytics core delivery) is new this period: 60,000.00 USD contract, 300 planned hours, effective 2026-07-06, method fixed fee, hours against estimate at completion. **7,000.00 USD**.
 
-**Non-billable hours recognised at the standard rate** (`NONBILLABLE_RECOGNIZED`)
+**Non-billable hours recognized at the standard rate** (`NONBILLABLE_RECOGNIZED`)
 
-- PX-23 / CI-PX-23A: 5.14 non-billable hours on CI-PX-23A were recognised at 200/h (1,027.24 USD), matching how prior periods were posted. **1,027.24 USD**.
-  Question: Should non-billable enablement hours on T&M engagements keep being recognised as revenue?
-- PX-23 / CI-PX-23B: 2.86 non-billable hours on CI-PX-23B were recognised at 200/h (572.76 USD), matching how prior periods were posted. **572.76 USD**.
-  Question: Should non-billable enablement hours on T&M engagements keep being recognised as revenue?
-- PX-24 / CI-PX-24: 12 non-billable hours on CI-PX-24 were recognised at 200/h (2,400.00 USD), matching how prior periods were posted. **2,400.00 USD**.
-  Question: Should non-billable enablement hours on T&M engagements keep being recognised as revenue?
-- PX-25 / CI-PX-25: 8 non-billable hours on CI-PX-25 were recognised at 200/h (1,600.00 USD), matching how prior periods were posted. **1,600.00 USD**.
-  Question: Should non-billable enablement hours on T&M engagements keep being recognised as revenue?
-- PX-26 / CI-PX-26: 9 non-billable hours on CI-PX-26 were recognised at 200/h (1,800.00 USD), matching how prior periods were posted. **1,800.00 USD**.
-  Question: Should non-billable enablement hours on T&M engagements keep being recognised as revenue?
+- PX-23 / CI-PX-23A: 5.14 non-billable hours on CI-PX-23A were recognized at 200/h (1,027.24 USD), matching how prior periods were posted. **1,027.24 USD**.
+  Question: Should non-billable enablement hours on T&M engagements keep being recognized as revenue?
+- PX-23 / CI-PX-23B: 2.86 non-billable hours on CI-PX-23B were recognized at 200/h (572.76 USD), matching how prior periods were posted. **572.76 USD**.
+  Question: Should non-billable enablement hours on T&M engagements keep being recognized as revenue?
+- PX-24 / CI-PX-24: 12 non-billable hours on CI-PX-24 were recognized at 200/h (2,400.00 USD), matching how prior periods were posted. **2,400.00 USD**.
+  Question: Should non-billable enablement hours on T&M engagements keep being recognized as revenue?
+- PX-25 / CI-PX-25: 8 non-billable hours on CI-PX-25 were recognized at 200/h (1,600.00 USD), matching how prior periods were posted. **1,600.00 USD**.
+  Question: Should non-billable enablement hours on T&M engagements keep being recognized as revenue?
+- PX-26 / CI-PX-26: 9 non-billable hours on CI-PX-26 were recognized at 200/h (1,800.00 USD), matching how prior periods were posted. **1,800.00 USD**.
+  Question: Should non-billable enablement hours on T&M engagements keep being recognized as revenue?
 
 **Delivery lead revised percent complete** (`POC_SNAPSHOT_UPDATE`)
 
-- PX-13 / CI-PX-13: Meridian Retail | Modernization: delivery lead confirms 74.5% complete (was 68.0%); CI-PX-13 recognises 5,850.00 EUR this period. **5,850.00 EUR**.
-- PX-14 / CI-PX-14: Nightingale Health Systems | Modernization: delivery lead confirms 68.0% complete (was 62.0%); CI-PX-14 recognises 6,000.00 USD this period. **6,000.00 USD**.
-- PX-15 / CI-PX-15: Obsidian Capital | Modernization: delivery lead confirms 71.0% complete (was 65.0%); CI-PX-15 recognises 4,800.00 USD this period. **4,800.00 USD**.
-- PX-16 / CI-PX-16: Pinnacle Foods | Modernization: delivery lead confirms 63.0% complete (was 57.0%); CI-PX-16 recognises 7,200.00 USD this period. **7,200.00 USD**.
+- PX-13 / CI-PX-13: Meridian Retail | Modernization: delivery lead confirms 74.5% complete (was 68.0%); CI-PX-13 recognizes 5,850.00 EUR this period. **5,850.00 EUR**.
+- PX-14 / CI-PX-14: Nightingale Health Systems | Modernization: delivery lead confirms 68.0% complete (was 62.0%); CI-PX-14 recognizes 6,000.00 USD this period. **6,000.00 USD**.
+- PX-15 / CI-PX-15: Obsidian Capital | Modernization: delivery lead confirms 71.0% complete (was 65.0%); CI-PX-15 recognizes 4,800.00 USD this period. **4,800.00 USD**.
+- PX-16 / CI-PX-16: Pinnacle Foods | Modernization: delivery lead confirms 63.0% complete (was 57.0%); CI-PX-16 recognizes 7,200.00 USD this period. **7,200.00 USD**.
 
 **Hours logged before the effective date count toward completion** (`PRE_EFFECTIVE_HOURS_COUNTED`)
 
@@ -141,11 +141,11 @@ Grouped by cause. Amounts are the effect on the period in the item's own currenc
 - PX-21-CR / CI-PX-21-CR: CI-PX-21-CR is 102.5% complete by hours (82 of 80); recognition held at 95% (15,200.00 USD) pending acceptance. **1,200.00 USD**.
 - PX-22-CR / CI-PX-22-CR: CI-PX-22-CR is 105.0% complete by hours (63 of 60); recognition held at 95% (11,400.00 USD) pending acceptance. **1,200.00 USD**.
 
-**Fully recognised item carried with no movement** (`COMPLETED_CARRYFORWARD`)
+**Fully recognized item carried with no movement** (`COMPLETED_CARRYFORWARD`)
 
-- PX-07 / CI-PX-07: CI-PX-07 is fully recognised; no hours in 2026-07.
-- PX-08 / CI-PX-08: CI-PX-08 is fully recognised; no hours in 2026-07.
-- PX-12 / CI-PX-12B: CI-PX-12B is fully recognised; no hours in 2026-07.
+- PX-07 / CI-PX-07: CI-PX-07 is fully recognized; no hours in 2026-07.
+- PX-08 / CI-PX-08: CI-PX-08 is fully recognized; no hours in 2026-07.
+- PX-12 / CI-PX-12B: CI-PX-12B is fully recognized; no hours in 2026-07.
 
 **Hours on items outside the PS schedule; excluded** (`NON_PS_HOURS`)
 
@@ -224,19 +224,19 @@ Every row of the 2026-07 schedule, cumulative as in the ledger, with the period 
 | Item | Project | Method | Status | Cur | Rec. 2026-06 | Rec. 2026-07 | 2026-07 move | 2026-06 move | Planned | % rec. | Bill. h | Why |
 | --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | CI-PX-01 | PX-01 | fixed fee | held | USD | 95,000.00 | 95,000.00 | 0.00 | 0.00 | 107,800.00 | 95.0% | 29 | Logged hours exceed the estimate at completion |
-| CI-PX-02 | PX-02 | fixed fee | held | USD | 83,600.00 | 88,000.00 | 4,400.00 | 0.00 | 91,600.00 | 100.0% | 8 | Acceptance confirmed; remaining contract value recognised |
+| CI-PX-02 | PX-02 | fixed fee | held | USD | 83,600.00 | 88,000.00 | 4,400.00 | 0.00 | 91,600.00 | 100.0% | 8 | Acceptance confirmed; remaining contract value recognized |
 | CI-PX-03 | PX-03 | fixed fee | held | USD | 114,000.00 | 114,000.00 | 0.00 | 0.00 | 133,200.00 | 95.0% | 46 | Logged hours exceed the estimate at completion |
 | CI-PX-04 | PX-04 | fixed fee | held | USD | 68,400.00 | 68,400.00 | 0.00 | 400.00 | 74,400.00 | 95.0% | 17 | Logged hours exceed the estimate at completion |
 | CI-PX-05 | PX-05 | fixed fee | held | USD | 79,800.00 | 79,800.00 | 0.00 | 800.00 | 86,800.00 | 95.0% | 21 | Prior period as posted differs from the rules as configured |
 | CI-PX-06 | PX-06 | fixed fee | held | USD | 106,400.00 | 106,400.00 | 0.00 | 2,400.00 | 123,400.00 | 95.0% | 52 | Logged hours exceed the estimate at completion |
-| CI-PX-07 | PX-07 | fixed fee | posted | USD | 90,000.00 | 90,000.00 | 0.00 | 4,500.00 | 87,000.00 | 100.0% | 0 | Fully recognised item carried with no movement |
-| CI-PX-08 | PX-08 | fixed fee | held | USD | 76,000.00 | 76,000.00 | 0.00 | 3,800.00 | 76,600.00 | 100.0% | 0 | Fully recognised item carried with no movement |
-| CI-PX-09 | PX-09 | fixed fee | posted | USD | 40,000.00 | 80,000.00 | 40,000.00 | 0.00 | 65,800.00 | 100.0% | 69 | Milestone confirmed; next tranche recognised |
-| CI-PX-10 | PX-10 | fixed fee | posted | USD | 30,000.00 | 60,000.00 | 30,000.00 | 0.00 | 49,400.00 | 100.0% | 52 | Milestone confirmed; next tranche recognised |
+| CI-PX-07 | PX-07 | fixed fee | posted | USD | 90,000.00 | 90,000.00 | 0.00 | 4,500.00 | 87,000.00 | 100.0% | 0 | Fully recognized item carried with no movement |
+| CI-PX-08 | PX-08 | fixed fee | held | USD | 76,000.00 | 76,000.00 | 0.00 | 3,800.00 | 76,600.00 | 100.0% | 0 | Fully recognized item carried with no movement |
+| CI-PX-09 | PX-09 | fixed fee | posted | USD | 40,000.00 | 80,000.00 | 40,000.00 | 0.00 | 65,800.00 | 100.0% | 69 | Milestone confirmed; next tranche recognized |
+| CI-PX-10 | PX-10 | fixed fee | posted | USD | 30,000.00 | 60,000.00 | 30,000.00 | 0.00 | 49,400.00 | 100.0% | 52 | Milestone confirmed; next tranche recognized |
 | CI-PX-11 | PX-11 | fixed fee | posted | USD | 70,000.00 | 70,000.00 | 0.00 | 35,000.00 | 51,200.00 | 100.0% | 46 | Milestone pending; tranche 1 held |
 | CI-PX-12-CR | PX-12-CR | fixed fee | held | USD | 19,000.00 | 19,000.00 | 0.00 | 3,000.00 | 22,400.00 | 95.0% | 17 | Logged hours exceed the estimate at completion |
 | CI-PX-12A | PX-12 | fixed fee | posted | USD | 68,000.00 | 89,800.00 | 21,800.00 | 8,000.00 | 89,800.00 | 89.8% | 109 | Hours split across items by rule, not by the timesheet |
-| CI-PX-12B | PX-12 | fixed fee | posted | USD | 50,000.00 | 50,000.00 | 0.00 | 25,000.00 | 25,000.00 | 100.0% | 0 | Fully recognised item carried with no movement |
+| CI-PX-12B | PX-12 | fixed fee | posted | USD | 50,000.00 | 50,000.00 | 0.00 | 25,000.00 | 25,000.00 | 100.0% | 0 | Fully recognized item carried with no movement |
 | CI-PX-13 | PX-13 | fixed fee | posted | EUR | 61,200.00 | 67,050.00 | 5,850.00 | 7,200.00 | 38,600.00 | 74.5% | 23 | Delivery lead revised percent complete |
 | CI-PX-14 | PX-14 | fixed fee | posted | USD | 62,000.00 | 68,000.00 | 6,000.00 | 7,000.00 | 46,800.00 | 68.0% | 29 | Delivery lead revised percent complete |
 | CI-PX-15 | PX-15 | fixed fee | posted | USD | 52,000.00 | 56,800.00 | 4,800.00 | 5,600.00 | 34,400.00 | 71.0% | 17 | Delivery lead revised percent complete |
@@ -250,15 +250,15 @@ Every row of the 2026-07 schedule, cumulative as in the ledger, with the period 
 | CI-PX-21B | PX-21 | fixed fee | posted | USD | 15,000.00 | 17,926.83 | 2,926.83 | 3,000.00 | 17,926.83 | 59.8% | 14.63 | Hours split across items by rule, not by the timesheet |
 | CI-PX-22 | PX-22 | fixed fee | held | USD | 33,636.36 | 38,909.09 | 5,272.73 | 4,545.45 | 42,800.00 | 55.6% | 29 | 29 billable h against plan |
 | CI-PX-22-CR | PX-22-CR | fixed fee | held | USD | 9,600.00 | 11,400.00 | 1,800.00 | 2,600.00 | 12,600.00 | 95.0% | 15 | Logged hours exceed the estimate at completion |
-| CI-PX-23A | PX-23 | time and materials | posted | USD | 36,000.00 | 40,365.76 | 4,365.76 | 4,000.00 | 34,338.52 | 63.1% | 16.69 | Hours split across items by rule, not by the timesheet; Non-billable hours recognised at the standard rate |
-| CI-PX-23B | PX-23 | time and materials | posted | USD | 16,000.00 | 18,434.24 | 2,434.24 | 2,000.00 | 15,461.48 | 57.6% | 9.31 | Hours split across items by rule, not by the timesheet; Non-billable hours recognised at the standard rate |
-| CI-PX-24 | PX-24 | time and materials | posted | USD | 44,000.00 | 51,000.00 | 7,000.00 | 6,000.00 | 40,600.00 | 63.8% | 23 | Non-billable hours recognised at the standard rate |
-| CI-PX-25 | PX-25 | time and materials | posted | USD | 38,000.00 | 43,800.00 | 5,800.00 | 5,000.00 | 35,800.00 | 60.8% | 21 | Non-billable hours recognised at the standard rate |
-| CI-PX-26 | PX-26 | time and materials | posted | USD | 46,000.00 | 52,800.00 | 6,800.00 | 6,000.00 | 45,400.00 | 60.0% | 25 | Non-billable hours recognised at the standard rate |
+| CI-PX-23A | PX-23 | time and materials | posted | USD | 36,000.00 | 40,365.76 | 4,365.76 | 4,000.00 | 34,338.52 | 63.1% | 16.69 | Hours split across items by rule, not by the timesheet; Non-billable hours recognized at the standard rate |
+| CI-PX-23B | PX-23 | time and materials | posted | USD | 16,000.00 | 18,434.24 | 2,434.24 | 2,000.00 | 15,461.48 | 57.6% | 9.31 | Hours split across items by rule, not by the timesheet; Non-billable hours recognized at the standard rate |
+| CI-PX-24 | PX-24 | time and materials | posted | USD | 44,000.00 | 51,000.00 | 7,000.00 | 6,000.00 | 40,600.00 | 63.8% | 23 | Non-billable hours recognized at the standard rate |
+| CI-PX-25 | PX-25 | time and materials | posted | USD | 38,000.00 | 43,800.00 | 5,800.00 | 5,000.00 | 35,800.00 | 60.8% | 21 | Non-billable hours recognized at the standard rate |
+| CI-PX-26 | PX-26 | time and materials | posted | USD | 46,000.00 | 52,800.00 | 6,800.00 | 6,000.00 | 45,400.00 | 60.0% | 25 | Non-billable hours recognized at the standard rate |
 | CI-PX-27 | PX-27 | fixed fee | held | USD | 0.00 | 0.00 | 0.00 | -20,000.00 | 20,000.00 | 0.0% | 0 | Terminated item carried with no movement |
 | CI-PX-28 | PX-28 | fixed fee | held | USD | 0.00 | 0.00 | 0.00 | -22,000.00 | 22,000.00 | 0.0% | 0 | Terminated item carried with no movement |
-| CI-PX-29 | PX-29 | fixed fee | posted | USD | 0.00 | 9,400.00 | 9,400.00 | 0.00 | 9,400.00 | 23.5% | 12 | Item became effective; first revenue recognised; Hours logged before the effective date count toward completion |
-| CI-PX-30 | PX-30 | fixed fee | posted | USD | 0.00 | 7,400.00 | 7,400.00 | 0.00 | 7,400.00 | 20.6% | 9 | Item became effective; first revenue recognised; Hours logged before the effective date count toward completion |
+| CI-PX-29 | PX-29 | fixed fee | posted | USD | 0.00 | 9,400.00 | 9,400.00 | 0.00 | 9,400.00 | 23.5% | 12 | Item became effective; first revenue recognized; Hours logged before the effective date count toward completion |
+| CI-PX-30 | PX-30 | fixed fee | posted | USD | 0.00 | 7,400.00 | 7,400.00 | 0.00 | 7,400.00 | 20.6% | 9 | Item became effective; first revenue recognized; Hours logged before the effective date count toward completion |
 | CI-PX-31 | PX-31 | fixed fee | held | EUR | 32,602.74 | 38,005.48 | 5,402.74 | 4,657.53 | 40,800.00 | 55.9% | 29 | 29 billable h against plan |
 | CI-PX-32 | PX-32 | fixed fee | posted | CAD | 46,000.00 | 52,800.00 | 6,800.00 | 6,000.00 | 52,800.00 | 57.4% | 34 | 34 billable h against plan |
 | CI-PX-33 | PX-33 | fixed fee | held | GBP | 36,146.34 | 41,521.95 | 5,375.61 | 4,634.14 | 44,800.00 | 54.6% | 29 | 29 billable h against plan |
@@ -283,10 +283,10 @@ Every row of the 2026-07 schedule, cumulative as in the ledger, with the period 
 7. How should PX-23 hours be split between CI-PX-23A and CI-PX-23B?
 8. How should PX-23 hours be split between CI-PX-23B and CI-PX-23A?
 9. Is SO-PX-20-ORPHAN a real order that needs a contract item, or a duplicate to void?
-10. Should RMA-PX-20 reduce recognised revenue on PX-20, and against which item?
+10. Should RMA-PX-20 reduce recognized revenue on PX-20, and against which item?
 11. Was CI-PX-05 in 2026-06 meant to follow the standard rule, or was the posted figure a deliberate override?
 12. Is a change order or a revised estimate expected for this overrun?
-13. Should non-billable enablement hours on T&M engagements keep being recognised as revenue?
+13. Should non-billable enablement hours on T&M engagements keep being recognized as revenue?
 14. Should hours logged before the effective date count toward completion, or be excluded?
 15. Can the OpenAir link for PX-18 be fixed so these rows arrive with a project id?
 

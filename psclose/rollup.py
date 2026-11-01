@@ -54,7 +54,7 @@ def _usd(amount: Decimal, rate: Decimal | None) -> Decimal | None:
     return money(amount * rate) if rate is not None else None
 
 
-def _summarise(period: str, project: sqlite3.Row, customer: str, scope: str, closes: list[ItemClose],
+def _summarize(period: str, project: sqlite3.Row, customer: str, scope: str, closes: list[ItemClose],
                rate: tuple[float, str] | None, exception_count: int) -> ProjectRollup:
     contract = sum((c.ctx.contract for c in closes), ZERO)
     recognized = sum((c.outcome.recognized for c in closes), ZERO)
@@ -106,7 +106,7 @@ def build_rollup(conn: sqlite3.Connection, result: PeriodResult) -> list[Project
         project = projects[project_id]
         closes = by_project[project_id]
         rate = fx_latest(conn, closes[0].ctx.currency, end)
-        rows.append(_summarise(period, project, customers.get(project["customer_id"], project["customer_id"]),
+        rows.append(_summarize(period, project, customers.get(project["customer_id"], project["customer_id"]),
                                "project", closes, rate, counts.get(project_id, 0)))
 
     children: dict[str, list[str]] = {}
@@ -121,7 +121,7 @@ def build_rollup(conn: sqlite3.Connection, result: PeriodResult) -> list[Project
         project = projects[parent]
         rate = fx_latest(conn, closes[0].ctx.currency, end)
         count = counts.get(parent, 0) + sum(counts.get(k, 0) for k in kids)
-        rows.append(_summarise(period, project, customers.get(project["customer_id"], project["customer_id"]),
+        rows.append(_summarize(period, project, customers.get(project["customer_id"], project["customer_id"]),
                                "with_change_orders", closes, rate, count))
     return rows
 

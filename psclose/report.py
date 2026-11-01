@@ -25,7 +25,7 @@ POSTING_COLUMNS = [
     "currency", "accounting_book", "status", "source_reference", "memo",
 ]
 WALK_COLUMNS = [
-    "contract_item_id", "project_id", "project", "currency", "method", "status",
+    "period", "contract_item_id", "project_id", "project", "currency", "method", "status",
     "recognized_prior", "recognized_cum", "recognized_delta", "prior_period_delta",
     "planned_cum", "contract_amount", "pct_recognized", "billable_hours_period", "all_hours_period",
     "billable_hours_cum", "straight_line", "explanation",
@@ -80,7 +80,7 @@ def walk_rows(result: PeriodResult) -> list[list]:
         straight, why = item_explanation(c, result.exceptions)
         pct = (c.outcome.recognized / c.ctx.contract * 100).quantize(Decimal("0.1")) if c.ctx.contract else Decimal(0)
         rows.append([
-            c.ctx.item_id, c.ctx.project_id, c.ctx.project["display_name"], c.ctx.currency, c.method, c.status,
+            result.period, c.ctx.item_id, c.ctx.project_id, c.ctx.project["display_name"], c.ctx.currency, c.method, c.status,
             money(c.ctx.prior.recognized), c.outcome.recognized, c.delta, money(result.prior_deltas.get(c.ctx.item_id, Decimal(0))),
             c.planned, c.ctx.contract, pct, c.ctx.hours.billable_period, c.ctx.hours.all_period,
             c.ctx.hours.billable_cum, "yes" if straight else "no", why,
@@ -154,10 +154,10 @@ def render_report(conn: sqlite3.Connection, result: PeriodResult, rollups: list[
     out.append("")
     rows = [[cur, int(b["items"]), _fmt(b["contract"]), _fmt(b["cum"]), _fmt(b["period"]), _fmt(b["planned"])]
             for cur, b in sorted(by_currency.items())]
-    out.append(_table(["Currency", "Items", "Contract value", "Recognised to date", f"Recognised in {period}", "Planned to date"], rows, {1, 2, 3, 4, 5}))
+    out.append(_table(["Currency", "Items", "Contract value", "Recognized to date", f"Recognized in {period}", "Planned to date"], rows, {1, 2, 3, 4, 5}))
     out.append("")
     stale = [e for e in result.exceptions if e.code == "FX_RATE_STALE"]
-    out.append(f"USD view at the latest available rates: {_fmt(usd_cum)} recognised to date, {_fmt(usd_period)} in {period}."
+    out.append(f"USD view at the latest available rates: {_fmt(usd_cum)} recognized to date, {_fmt(usd_period)} in {period}."
                + (f" Rates for {', '.join(e.currency for e in stale)} are carried from the prior month end; see exceptions." if stale else ""))
     out.append("")
 
@@ -204,7 +204,7 @@ def render_report(conn: sqlite3.Connection, result: PeriodResult, rollups: list[
     out.append("")
     rows = []
     for row in walk_rows(result):
-        (item, project_id, project, cur, method, status, rec_prior, rec, delta, prior_delta,
+        (_, item, project_id, project, cur, method, status, rec_prior, rec, delta, prior_delta,
          planned, contract, pct, bh, ah, bh_cum, straight_flag, why) = row
         rows.append([item, project_id, METHOD_LABELS[method].split(",")[0], status, cur, _fmt(rec_prior), _fmt(rec),
                      _fmt(delta), _fmt(prior_delta), _fmt(planned), f"{pct}%", _hours(bh), why])

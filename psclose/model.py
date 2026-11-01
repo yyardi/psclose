@@ -76,7 +76,7 @@ class ItemContext:
     def is_effective(self) -> bool:
         """Revenue starts when the contract is live, or earlier once approved hours are
         being logged against the scope without being tagged as pre-effective. History
-        recognised January hours on items effective 1 February but kept items open whose
+        recognized January hours on items effective 1 February but kept items open whose
         only hours carried the pre-effective tag."""
         return self.contract_live or self.hours.started
 

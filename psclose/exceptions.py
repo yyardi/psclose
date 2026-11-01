@@ -5,7 +5,7 @@ severity, the amount at stake, the ids that prove it, and the question it raises
 groups them by cause; the memo turns them into prose.
 
 Severities: info (no decision needed, included so the walk is complete), review (a number
-moved for a reason the controller should recognise), action (something is wrong or unknown
+moved for a reason the controller should recognize), action (something is wrong or unknown
 and the figure may change once answered).
 """
 
@@ -27,24 +27,24 @@ INFO, REVIEW, ACTION = "info", "review", "action"
 SEVERITY_ORDER = {ACTION: 0, REVIEW: 1, INFO: 2}
 
 CODES: dict[str, tuple[str, str]] = {
-    "ACCEPTANCE_RELEASE": (REVIEW, "Acceptance confirmed; remaining contract value recognised"),
-    "MILESTONE_RELEASE": (REVIEW, "Milestone confirmed; next tranche recognised"),
+    "ACCEPTANCE_RELEASE": (REVIEW, "Acceptance confirmed; remaining contract value recognized"),
+    "MILESTONE_RELEASE": (REVIEW, "Milestone confirmed; next tranche recognized"),
     "POC_SNAPSHOT_UPDATE": (REVIEW, "Delivery lead revised percent complete"),
     "SNAPSHOT_MISSING": (ACTION, "No percent-complete confirmation for the period"),
-    "FIRST_RECOGNITION": (REVIEW, "Item became effective; first revenue recognised"),
+    "FIRST_RECOGNITION": (REVIEW, "Item became effective; first revenue recognized"),
     "NEW_ITEM": (REVIEW, "Contract item appears on the schedule for the first time"),
     "HOURS_ALLOCATED": (ACTION, "Hours split across items by rule, not by the timesheet"),
     "CAP_BINDING": (INFO, "Recognition held at the pre-acceptance cap"),
     "EAC_REVISED": (REVIEW, "Approved no-charge hours raised the estimate at completion"),
     "PAID_ADJUSTMENT_NOTED": (INFO, "Paid change request logged; base item estimate unchanged"),
     "HOURS_OVER_PLAN": (REVIEW, "Logged hours exceed the estimate at completion"),
-    "TERMINATION_CREDIT": (REVIEW, "Contract terminated; recognised revenue reversed"),
+    "TERMINATION_CREDIT": (REVIEW, "Contract terminated; recognized revenue reversed"),
     "TERMINATED_CARRYFORWARD": (INFO, "Terminated item carried with no movement"),
-    "COMPLETED_CARRYFORWARD": (INFO, "Fully recognised item carried with no movement"),
+    "COMPLETED_CARRYFORWARD": (INFO, "Fully recognized item carried with no movement"),
     "NO_ACTIVITY": (REVIEW, "Active item with no hours in the period"),
     "PRE_EFFECTIVE_HOURS_COUNTED": (REVIEW, "Hours logged before the effective date count toward completion"),
-    "NONBILLABLE_RECOGNIZED": (REVIEW, "Non-billable hours recognised at the standard rate"),
-    "NEGATIVE_DELTA": (ACTION, "Cumulative recognised revenue fell without a termination"),
+    "NONBILLABLE_RECOGNIZED": (REVIEW, "Non-billable hours recognized at the standard rate"),
+    "NEGATIVE_DELTA": (ACTION, "Cumulative recognized revenue fell without a termination"),
     "HISTORY_INCONSISTENCY": (REVIEW, "Prior period as posted differs from the rules as configured"),
     "POC_CONFIRMATION_CHECK": (INFO, "Delivery-lead confirmation compared with the computed position"),
     "UNMATCHED_HOURS_RESOLVED": (REVIEW, "Timesheets with no project link matched by name"),
@@ -116,7 +116,7 @@ def _rate(value: Decimal) -> str:
 
 
 def _per_hour_value(close: ItemClose, policy: Policy) -> Decimal:
-    """Recognised value of one more billable hour on this item under its method."""
+    """Recognized value of one more billable hour on this item under its method."""
     if close.method == methods.TM_HOURS:
         return policy.tm_rate
     if close.method == methods.HOURS_POC:
@@ -153,10 +153,10 @@ def item_checks(close: ItemClose, policy: Policy) -> list[CloseException]:
             add(
                 "TERMINATION_CREDIT",
                 f"{ctx.project['display_name']} terminated {facts['termination_date']}; "
-                f"{_fmt(abs(facts['credit_total']), cur)} previously recognised is reversed.",
+                f"{_fmt(abs(facts['credit_total']), cur)} previously recognized is reversed.",
                 close.delta,
                 facts["rma_ids"],
-                None if facts["reversed_fully"] else "The RMA credit does not equal the recognised balance; confirm the amount to reverse.",
+                None if facts["reversed_fully"] else "The RMA credit does not equal the recognized balance; confirm the amount to reverse.",
             )
         else:
             add("TERMINATED_CARRYFORWARD", f"{item} terminated {facts['termination_date']}; no movement.", Decimal(0), [])
@@ -193,7 +193,7 @@ def item_checks(close: ItemClose, policy: Policy) -> list[CloseException]:
     if close.delta < 0:
         add(
             "NEGATIVE_DELTA",
-            f"Cumulative recognised on {item} fell from {_fmt(prior.recognized, cur)} to {_fmt(out.recognized, cur)}.",
+            f"Cumulative recognized on {item} fell from {_fmt(prior.recognized, cur)} to {_fmt(out.recognized, cur)}.",
             close.delta,
             [item],
             "A negative true-up needs a manual journal entry or a credit memo; which applies?",
@@ -207,7 +207,7 @@ def item_checks(close: ItemClose, policy: Policy) -> list[CloseException]:
         alt_hours = project_hours * dec(ctx.item["planned_hours"]) / total_planned if total_planned else hours.billable_period
         swing = money((alt_hours - hours.billable_period) * _per_hour_value(close, policy))
         if "single_open_item" in alloc:
-            why = f"because {', '.join(others)} is already fully recognised"
+            why = f"because {', '.join(others)} is already fully recognized"
         else:
             why = "in proportion to the hours each item still has to deliver"
         ratio = ":".join(_hours(dec(s["planned_hours"])) for s in ctx.siblings)
@@ -216,10 +216,10 @@ def item_checks(close: ItemClose, policy: Policy) -> list[CloseException]:
             f"{_hours(hours.billable_period)} of {_hours(project_hours)} billable hours on {project} were placed on "
             f"{item} {why}; the {period} timesheets name the project but not the item. A plain split by planned "
             f"hours ({ratio}) would give {item} {_hours(alt_hours.quantize(Decimal('0.01')))} h and move its "
-            f"recognised revenue by {_fmt(swing, cur)}.",
+            f"recognized revenue by {_fmt(swing, cur)}.",
             close.delta,
             [item] + others,
-            f"How should {project} hours be split between {item} and {', '.join(others)}?",
+            f"How should {project} hours be split between {' and '.join(sorted([item] + others))}?",
         )
 
     if close.method == methods.HOURS_POC:
@@ -251,7 +251,7 @@ def item_checks(close: ItemClose, policy: Policy) -> list[CloseException]:
             add(
                 "EAC_REVISED",
                 f"Approved no-charge hours on {project} ({', '.join(new_adj)}) raise the estimate at completion "
-                f"to {_hours(eac)} hours; {item} recognises {_fmt(out.recognized, cur)} instead of "
+                f"to {_hours(eac)} hours; {item} recognizes {_fmt(out.recognized, cur)} instead of "
                 f"{_fmt(without, cur)}.",
                 out.recognized - money(without),
                 new_adj,
@@ -275,7 +275,7 @@ def item_checks(close: ItemClose, policy: Policy) -> list[CloseException]:
                 f"planned value {_fmt(close.planned, cur)} now exceeds the {_fmt(ctx.contract, cur)} contract.",
                 close.planned - ctx.contract,
                 [item],
-                "Is a change order or a revised estimate expected for this overrun?",
+                f"Is a change order or a revised estimate expected on {item} ({_hours(hours.billable_cum)} h against {_hours(eac)})?",
             )
 
     elif close.method == methods.MILESTONE:
@@ -302,7 +302,7 @@ def item_checks(close: ItemClose, policy: Policy) -> list[CloseException]:
             add(
                 "POC_SNAPSHOT_UPDATE",
                 f"{ctx.project['display_name']}: delivery lead confirms {facts['poc_pct']}% complete "
-                f"(was {facts['prior_poc_pct']}%); {item} recognises {_fmt(close.delta, cur)} this period.",
+                f"(was {facts['prior_poc_pct']}%); {item} recognizes {_fmt(close.delta, cur)} this period.",
                 close.delta,
                 [item],
             )
@@ -310,17 +310,17 @@ def item_checks(close: ItemClose, policy: Policy) -> list[CloseException]:
     elif close.method == methods.TM_HOURS and facts["nonbillable_period"] > 0:
         add(
             "NONBILLABLE_RECOGNIZED",
-            f"{_hours(facts['nonbillable_period'])} non-billable hours on {item} were recognised at "
+            f"{_hours(facts['nonbillable_period'])} non-billable hours on {item} were recognized at "
             f"{_rate(policy.tm_rate)}/h ({_fmt(facts['nonbillable_period'] * policy.tm_rate, cur)}), "
             f"matching how prior periods were posted.",
             money(facts["nonbillable_period"] * policy.tm_rate),
             [item],
-            "Should non-billable enablement hours on T&M engagements keep being recognised as revenue?",
+            "Should non-billable enablement hours on T&M engagements keep being recognized as revenue?",
         )
 
     if hours.all_period == 0 and prior.period is not None:
         if out.recognized >= ctx.contract:
-            add("COMPLETED_CARRYFORWARD", f"{item} is fully recognised; no hours in {period}.", Decimal(0), [item])
+            add("COMPLETED_CARRYFORWARD", f"{item} is fully recognized; no hours in {period}.", Decimal(0), [item])
         else:
             add(
                 "NO_ACTIVITY",
@@ -432,7 +432,7 @@ def ledger_checks(
             f"{rma['id']} ({rma['return_number']}, {rma['event_date']}, '{rma['reason']}') for "
             f"{_fmt(rma['amount_native'], rma['currency'])} has no matching credit in the schedule ({detail_text}).",
             dec(rma["amount_native"]), rma["currency"], [rma["id"], rma["original_sales_order_id"] or ""],
-            f"Should {rma['id']} reduce recognised revenue on {rma['project_id']}, and against which item?",
+            f"Should {rma['id']} reduce recognized revenue on {rma['project_id']}, and against which item?",
         )
 
     for currency in sorted({c.ctx.currency for c in closes} - {"USD"}):

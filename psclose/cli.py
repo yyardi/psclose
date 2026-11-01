@@ -49,7 +49,7 @@ def run_close(args) -> int:
         for c in result.items:
             totals[c.ctx.currency] = totals.get(c.ctx.currency, 0.0) + float(c.delta)
         print(f"{result.period}: {len(result.items)} schedule rows, "
-              + ", ".join(f"{amt:,.2f} {cur}" for cur, amt in sorted(totals.items())) + " recognised in period; "
+              + ", ".join(f"{amt:,.2f} {cur}" for cur, amt in sorted(totals.items())) + " recognized in period; "
               f"{counts[ACTION]} to answer, {counts[REVIEW]} to review, {counts[INFO]} noted.")
         for f in files:
             print(f"  wrote {f.relative_to(cfg.root) if f.is_relative_to(cfg.root) else f}")

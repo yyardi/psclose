@@ -1,49 +1,49 @@
-contract_item_id,project_id,project,currency,method,status,recognized_prior,recognized_cum,recognized_delta,prior_period_delta,planned_cum,contract_amount,pct_recognized,billable_hours_period,all_hours_period,billable_hours_cum,straight_line,explanation
-CI-PX-01,PX-01,Aurelia Health | Core Delivery,USD,hours_poc,held,95000.00,95000.00,0.00,0.00,107800.00,100000.00,95.00,29.00,29.00,539.00,no,Logged hours exceed the estimate at completion
-CI-PX-02,PX-02,Bramwell Logistics | Core Delivery,USD,hours_poc,held,83600.00,88000.00,4400.00,0.00,91600.00,88000.00,100.00,8.00,8.00,458.00,no,Acceptance confirmed; remaining contract value recognised
-CI-PX-03,PX-03,Cascade Robotics | Core Delivery,USD,hours_poc,held,114000.00,114000.00,0.00,0.00,133200.00,120000.00,95.00,46.00,46.00,666.00,no,Logged hours exceed the estimate at completion
-CI-PX-04,PX-04,Driftwood Media | Core Delivery,USD,hours_poc,held,68400.00,68400.00,0.00,400.00,74400.00,72000.00,95.00,17.00,17.00,372.00,no,Logged hours exceed the estimate at completion
-CI-PX-05,PX-05,Ember Insurance | Core Delivery,USD,hours_poc,held,79800.00,79800.00,0.00,800.00,86800.00,84000.00,95.00,21.00,21.00,434.00,no,Prior period as posted differs from the rules as configured
-CI-PX-06,PX-06,Falcon Grid Utilities | Core Delivery,USD,hours_poc,held,106400.00,106400.00,0.00,2400.00,123400.00,112000.00,95.00,52.00,52.00,617.00,no,Logged hours exceed the estimate at completion
-CI-PX-07,PX-07,Granite Peak Bank | Rollout,USD,hours_poc,posted,90000.00,90000.00,0.00,4500.00,87000.00,90000.00,100.00,0.00,0.00,435.00,yes,Fully recognised item carried with no movement
-CI-PX-08,PX-08,Halcyon Biotech | Rollout,USD,hours_poc,held,76000.00,76000.00,0.00,3800.00,76600.00,76000.00,100.00,0.00,0.00,383.00,yes,Fully recognised item carried with no movement
-CI-PX-09,PX-09,Ironwood Freight | Platform Build,USD,milestone,posted,40000.00,80000.00,40000.00,0.00,65800.00,80000.00,100.00,69.00,69.00,329.00,no,Milestone confirmed; next tranche recognised
-CI-PX-10,PX-10,Juniper Analytics | Platform Build,USD,milestone,posted,30000.00,60000.00,30000.00,0.00,49400.00,60000.00,100.00,52.00,52.00,247.00,no,Milestone confirmed; next tranche recognised
-CI-PX-11,PX-11,Kestrel Aerospace | Platform Build,USD,milestone,posted,70000.00,70000.00,0.00,35000.00,51200.00,70000.00,100.00,46.00,46.00,256.00,yes,Milestone pending; tranche 1 held
-CI-PX-12-CR,PX-12-CR,Lattice Semiconductor | CR1,USD,hours_poc,held,19000.00,19000.00,0.00,3000.00,22400.00,20000.00,95.00,17.00,17.00,112.00,no,Logged hours exceed the estimate at completion
-CI-PX-12A,PX-12,Lattice Semiconductor | Core Rollout,USD,hours_poc,posted,68000.00,89800.00,21800.00,8000.00,89800.00,100000.00,89.80,109.00,109.00,449.00,no,"Hours split across items by rule, not by the timesheet"
-CI-PX-12B,PX-12,Lattice Semiconductor | Core Rollout,USD,milestone,posted,50000.00,50000.00,0.00,25000.00,25000.00,50000.00,100.00,0.00,0.00,85.00,yes,Fully recognised item carried with no movement
-CI-PX-13,PX-13,Meridian Retail | Modernization,EUR,poc_snapshot,posted,61200.00,67050.00,5850.00,7200.00,38600.00,90000.00,74.50,23.00,23.00,193.00,no,Delivery lead revised percent complete
-CI-PX-14,PX-14,Nightingale Health Systems | Modernization,USD,poc_snapshot,posted,62000.00,68000.00,6000.00,7000.00,46800.00,100000.00,68.00,29.00,29.00,234.00,no,Delivery lead revised percent complete
-CI-PX-15,PX-15,Obsidian Capital | Modernization,USD,poc_snapshot,posted,52000.00,56800.00,4800.00,5600.00,34400.00,80000.00,71.00,17.00,17.00,172.00,no,Delivery lead revised percent complete
-CI-PX-16,PX-16,Pinnacle Foods | Modernization,USD,poc_snapshot,posted,68400.00,75600.00,7200.00,8400.00,54800.00,120000.00,63.00,34.00,34.00,274.00,no,Delivery lead revised percent complete
-CI-PX-17,PX-17,Quarrystone Insurance | Core Rollout,USD,hours_poc,posted,42000.00,48800.00,6800.00,6000.00,48800.00,80000.00,61.00,34.00,34.00,244.00,yes,34 billable h against plan
-CI-PX-18,PX-18,Redwood Transit | Core Services,USD,hours_poc,posted,39000.00,44800.00,5800.00,5000.00,44800.00,76000.00,58.90,29.00,29.00,224.00,yes,29 billable h against plan
-CI-PX-19,PX-19,Sable Energy | Transition,USD,hours_poc,posted,43000.00,48800.00,5800.00,5000.00,48800.00,84000.00,58.10,29.00,29.00,244.00,yes,29 billable h against plan
-CI-PX-20,PX-20,Tundra Apparel | Legacy Services,USD,hours_poc,posted,30000.00,34600.00,4600.00,4000.00,34600.00,60000.00,57.70,23.00,23.00,173.00,yes,23 billable h against plan
-CI-PX-21-CR,PX-21-CR,Umbra Studios | CR1,USD,hours_poc,held,13000.00,15200.00,2200.00,3000.00,16400.00,16000.00,95.00,17.00,17.00,82.00,no,Logged hours exceed the estimate at completion
-CI-PX-21A,PX-21,Umbra Studios | Platform Rebuild,USD,hours_poc,posted,34000.00,39073.17,5073.17,4000.00,39073.17,60000.00,65.10,25.37,25.37,195.37,no,"Hours split across items by rule, not by the timesheet"
-CI-PX-21B,PX-21,Umbra Studios | Platform Rebuild,USD,hours_poc,posted,15000.00,17926.83,2926.83,3000.00,17926.83,30000.00,59.80,14.63,14.63,89.63,no,"Hours split across items by rule, not by the timesheet"
-CI-PX-22,PX-22,Vellum Publishing | Content Migration,USD,hours_poc,held,33636.36,38909.09,5272.73,4545.45,42800.00,70000.00,55.60,29.00,29.00,214.00,yes,29 billable h against plan
-CI-PX-22-CR,PX-22-CR,Vellum Publishing | CR1,USD,hours_poc,held,9600.00,11400.00,1800.00,2600.00,12600.00,12000.00,95.00,15.00,15.00,63.00,no,Logged hours exceed the estimate at completion
-CI-PX-23A,PX-23,Wrenfield University | Advisory Program,USD,tm_hours,posted,36000.00,40365.76,4365.76,4000.00,34338.52,64000.00,63.10,16.69,21.83,171.69,no,"Hours split across items by rule, not by the timesheet; Non-billable hours recognised at the standard rate"
-CI-PX-23B,PX-23,Wrenfield University | Advisory Program,USD,tm_hours,posted,16000.00,18434.24,2434.24,2000.00,15461.48,32000.00,57.60,9.31,12.17,77.31,no,"Hours split across items by rule, not by the timesheet; Non-billable hours recognised at the standard rate"
-CI-PX-24,PX-24,Xylo Manufacturing | Advisory Program,USD,tm_hours,posted,44000.00,51000.00,7000.00,6000.00,40600.00,80000.00,63.80,23.00,35.00,203.00,no,Non-billable hours recognised at the standard rate
-CI-PX-25,PX-25,Yarrow Agritech | Advisory Program,USD,tm_hours,posted,38000.00,43800.00,5800.00,5000.00,35800.00,72000.00,60.80,21.00,29.00,179.00,no,Non-billable hours recognised at the standard rate
-CI-PX-26,PX-26,Zenith Telecom | Advisory Program,USD,tm_hours,posted,46000.00,52800.00,6800.00,6000.00,45400.00,88000.00,60.00,25.00,34.00,227.00,no,Non-billable hours recognised at the standard rate
-CI-PX-27,PX-27,Aldergate Public Works | Pilot Engagement,USD,hours_poc,held,0.00,0.00,0.00,-20000.00,20000.00,50000.00,0.00,0.00,0.00,100.00,yes,Terminated item carried with no movement
-CI-PX-28,PX-28,Briarwood Hospitality | Pilot Engagement,USD,hours_poc,held,0.00,0.00,0.00,-22000.00,22000.00,60000.00,0.00,0.00,0.00,110.00,yes,Terminated item carried with no movement
-CI-PX-29,PX-29,Copperline Rail | Expansion Scope,USD,hours_poc,posted,0.00,9400.00,9400.00,0.00,9400.00,40000.00,23.50,12.00,12.00,47.00,no,Item became effective; first revenue recognised; Hours logged before the effective date count toward completion
-CI-PX-30,PX-30,Dovetail Furniture | Expansion Scope,USD,hours_poc,posted,0.00,7400.00,7400.00,0.00,7400.00,36000.00,20.60,9.00,9.00,37.00,no,Item became effective; first revenue recognised; Hours logged before the effective date count toward completion
-CI-PX-31,PX-31,Elmswood Legal | Core Delivery,EUR,hours_poc,held,32602.74,38005.48,5402.74,4657.53,40800.00,68000.00,55.90,29.00,29.00,204.00,yes,29 billable h against plan
-CI-PX-32,PX-32,Fernbank Municipal | Core Delivery,CAD,hours_poc,posted,46000.00,52800.00,6800.00,6000.00,52800.00,92000.00,57.40,34.00,34.00,264.00,yes,34 billable h against plan
-CI-PX-33,PX-33,Gantry Shipping | Core Delivery,GBP,hours_poc,held,36146.34,41521.95,5375.61,4634.14,44800.00,76000.00,54.60,29.00,29.00,224.00,yes,29 billable h against plan
-CI-PX-34,PX-34,Heathfield Pharma | Core Delivery,GBP,hours_poc,posted,30000.00,34600.00,4600.00,4000.00,34600.00,60000.00,57.70,23.00,23.00,173.00,yes,23 billable h against plan
-CI-PX-37,PX-37,Kelso Marine | Core Delivery,USD,hours_poc,posted,33000.00,38800.00,5800.00,5000.00,38800.00,64000.00,60.60,29.00,29.00,194.00,yes,29 billable h against plan
-CI-PX-38,PX-38,Larkspur Foods | Core Delivery,USD,hours_poc,posted,51000.00,59000.00,8000.00,7000.00,59000.00,100000.00,59.00,40.00,40.00,295.00,yes,Paid change request logged; base item estimate unchanged
-CI-PX-38-CR,PX-38,Larkspur Foods | Core Delivery,USD,hours_poc,posted,0.00,1600.00,1600.00,0.00,1600.00,10000.00,16.00,8.00,8.00,8.00,no,Contract item appears on the schedule for the first time
-CI-PX-39,PX-39,Mistport Utilities | Core Delivery,USD,hours_poc,posted,29000.00,33600.00,4600.00,4000.00,33600.00,56000.00,60.00,23.00,23.00,168.00,yes,23 billable h against plan
-CI-PX-40,PX-40,Norwich Data Systems | Core Delivery,USD,hours_poc,held,38905.26,44917.89,6012.63,3438.59,50800.00,84000.00,53.50,34.00,34.00,254.00,yes,34 billable h against plan
-CI-PX-41,PX-41,Orinda Wealth Partners | Core Delivery,USD,hours_poc,posted,27000.00,31600.00,4600.00,4000.00,31600.00,52000.00,60.80,23.00,23.00,158.00,yes,23 billable h against plan
-CI-PX-42,PX-42,Pemberton Steelworks | Core Delivery,USD,hours_poc,held,45230.77,52615.38,7384.61,6461.54,57000.00,96000.00,54.80,40.00,40.00,285.00,yes,40 billable h against plan
-CI-PX-43,PX-43,Thistledown Analytics | Core Delivery,USD,hours_poc,posted,0.00,7000.00,7000.00,0.00,7000.00,60000.00,11.70,35.00,35.00,35.00,no,Contract item appears on the schedule for the first time
+period,contract_item_id,project_id,project,currency,method,status,recognized_prior,recognized_cum,recognized_delta,prior_period_delta,planned_cum,contract_amount,pct_recognized,billable_hours_period,all_hours_period,billable_hours_cum,straight_line,explanation
+2026-07,CI-PX-01,PX-01,Aurelia Health | Core Delivery,USD,hours_poc,held,95000.00,95000.00,0.00,0.00,107800.00,100000.00,95.00,29.00,29.00,539.00,no,Logged hours exceed the estimate at completion
+2026-07,CI-PX-02,PX-02,Bramwell Logistics | Core Delivery,USD,hours_poc,held,83600.00,88000.00,4400.00,0.00,91600.00,88000.00,100.00,8.00,8.00,458.00,no,Acceptance confirmed; remaining contract value recognized
+2026-07,CI-PX-03,PX-03,Cascade Robotics | Core Delivery,USD,hours_poc,held,114000.00,114000.00,0.00,0.00,133200.00,120000.00,95.00,46.00,46.00,666.00,no,Logged hours exceed the estimate at completion
+2026-07,CI-PX-04,PX-04,Driftwood Media | Core Delivery,USD,hours_poc,held,68400.00,68400.00,0.00,400.00,74400.00,72000.00,95.00,17.00,17.00,372.00,no,Logged hours exceed the estimate at completion
+2026-07,CI-PX-05,PX-05,Ember Insurance | Core Delivery,USD,hours_poc,held,79800.00,79800.00,0.00,800.00,86800.00,84000.00,95.00,21.00,21.00,434.00,no,Prior period as posted differs from the rules as configured
+2026-07,CI-PX-06,PX-06,Falcon Grid Utilities | Core Delivery,USD,hours_poc,held,106400.00,106400.00,0.00,2400.00,123400.00,112000.00,95.00,52.00,52.00,617.00,no,Logged hours exceed the estimate at completion
+2026-07,CI-PX-07,PX-07,Granite Peak Bank | Rollout,USD,hours_poc,posted,90000.00,90000.00,0.00,4500.00,87000.00,90000.00,100.00,0.00,0.00,435.00,yes,Fully recognized item carried with no movement
+2026-07,CI-PX-08,PX-08,Halcyon Biotech | Rollout,USD,hours_poc,held,76000.00,76000.00,0.00,3800.00,76600.00,76000.00,100.00,0.00,0.00,383.00,yes,Fully recognized item carried with no movement
+2026-07,CI-PX-09,PX-09,Ironwood Freight | Platform Build,USD,milestone,posted,40000.00,80000.00,40000.00,0.00,65800.00,80000.00,100.00,69.00,69.00,329.00,no,Milestone confirmed; next tranche recognized
+2026-07,CI-PX-10,PX-10,Juniper Analytics | Platform Build,USD,milestone,posted,30000.00,60000.00,30000.00,0.00,49400.00,60000.00,100.00,52.00,52.00,247.00,no,Milestone confirmed; next tranche recognized
+2026-07,CI-PX-11,PX-11,Kestrel Aerospace | Platform Build,USD,milestone,posted,70000.00,70000.00,0.00,35000.00,51200.00,70000.00,100.00,46.00,46.00,256.00,yes,Milestone pending; tranche 1 held
+2026-07,CI-PX-12-CR,PX-12-CR,Lattice Semiconductor | CR1,USD,hours_poc,held,19000.00,19000.00,0.00,3000.00,22400.00,20000.00,95.00,17.00,17.00,112.00,no,Logged hours exceed the estimate at completion
+2026-07,CI-PX-12A,PX-12,Lattice Semiconductor | Core Rollout,USD,hours_poc,posted,68000.00,89800.00,21800.00,8000.00,89800.00,100000.00,89.80,109.00,109.00,449.00,no,"Hours split across items by rule, not by the timesheet"
+2026-07,CI-PX-12B,PX-12,Lattice Semiconductor | Core Rollout,USD,milestone,posted,50000.00,50000.00,0.00,25000.00,25000.00,50000.00,100.00,0.00,0.00,85.00,yes,Fully recognized item carried with no movement
+2026-07,CI-PX-13,PX-13,Meridian Retail | Modernization,EUR,poc_snapshot,posted,61200.00,67050.00,5850.00,7200.00,38600.00,90000.00,74.50,23.00,23.00,193.00,no,Delivery lead revised percent complete
+2026-07,CI-PX-14,PX-14,Nightingale Health Systems | Modernization,USD,poc_snapshot,posted,62000.00,68000.00,6000.00,7000.00,46800.00,100000.00,68.00,29.00,29.00,234.00,no,Delivery lead revised percent complete
+2026-07,CI-PX-15,PX-15,Obsidian Capital | Modernization,USD,poc_snapshot,posted,52000.00,56800.00,4800.00,5600.00,34400.00,80000.00,71.00,17.00,17.00,172.00,no,Delivery lead revised percent complete
+2026-07,CI-PX-16,PX-16,Pinnacle Foods | Modernization,USD,poc_snapshot,posted,68400.00,75600.00,7200.00,8400.00,54800.00,120000.00,63.00,34.00,34.00,274.00,no,Delivery lead revised percent complete
+2026-07,CI-PX-17,PX-17,Quarrystone Insurance | Core Rollout,USD,hours_poc,posted,42000.00,48800.00,6800.00,6000.00,48800.00,80000.00,61.00,34.00,34.00,244.00,yes,34 billable h against plan
+2026-07,CI-PX-18,PX-18,Redwood Transit | Core Services,USD,hours_poc,posted,39000.00,44800.00,5800.00,5000.00,44800.00,76000.00,58.90,29.00,29.00,224.00,yes,29 billable h against plan
+2026-07,CI-PX-19,PX-19,Sable Energy | Transition,USD,hours_poc,posted,43000.00,48800.00,5800.00,5000.00,48800.00,84000.00,58.10,29.00,29.00,244.00,yes,29 billable h against plan
+2026-07,CI-PX-20,PX-20,Tundra Apparel | Legacy Services,USD,hours_poc,posted,30000.00,34600.00,4600.00,4000.00,34600.00,60000.00,57.70,23.00,23.00,173.00,yes,23 billable h against plan
+2026-07,CI-PX-21-CR,PX-21-CR,Umbra Studios | CR1,USD,hours_poc,held,13000.00,15200.00,2200.00,3000.00,16400.00,16000.00,95.00,17.00,17.00,82.00,no,Logged hours exceed the estimate at completion
+2026-07,CI-PX-21A,PX-21,Umbra Studios | Platform Rebuild,USD,hours_poc,posted,34000.00,39073.17,5073.17,4000.00,39073.17,60000.00,65.10,25.37,25.37,195.37,no,"Hours split across items by rule, not by the timesheet"
+2026-07,CI-PX-21B,PX-21,Umbra Studios | Platform Rebuild,USD,hours_poc,posted,15000.00,17926.83,2926.83,3000.00,17926.83,30000.00,59.80,14.63,14.63,89.63,no,"Hours split across items by rule, not by the timesheet"
+2026-07,CI-PX-22,PX-22,Vellum Publishing | Content Migration,USD,hours_poc,held,33636.36,38909.09,5272.73,4545.45,42800.00,70000.00,55.60,29.00,29.00,214.00,yes,29 billable h against plan
+2026-07,CI-PX-22-CR,PX-22-CR,Vellum Publishing | CR1,USD,hours_poc,held,9600.00,11400.00,1800.00,2600.00,12600.00,12000.00,95.00,15.00,15.00,63.00,no,Logged hours exceed the estimate at completion
+2026-07,CI-PX-23A,PX-23,Wrenfield University | Advisory Program,USD,tm_hours,posted,36000.00,40365.76,4365.76,4000.00,34338.52,64000.00,63.10,16.69,21.83,171.69,no,"Hours split across items by rule, not by the timesheet; Non-billable hours recognized at the standard rate"
+2026-07,CI-PX-23B,PX-23,Wrenfield University | Advisory Program,USD,tm_hours,posted,16000.00,18434.24,2434.24,2000.00,15461.48,32000.00,57.60,9.31,12.17,77.31,no,"Hours split across items by rule, not by the timesheet; Non-billable hours recognized at the standard rate"
+2026-07,CI-PX-24,PX-24,Xylo Manufacturing | Advisory Program,USD,tm_hours,posted,44000.00,51000.00,7000.00,6000.00,40600.00,80000.00,63.80,23.00,35.00,203.00,no,Non-billable hours recognized at the standard rate
+2026-07,CI-PX-25,PX-25,Yarrow Agritech | Advisory Program,USD,tm_hours,posted,38000.00,43800.00,5800.00,5000.00,35800.00,72000.00,60.80,21.00,29.00,179.00,no,Non-billable hours recognized at the standard rate
+2026-07,CI-PX-26,PX-26,Zenith Telecom | Advisory Program,USD,tm_hours,posted,46000.00,52800.00,6800.00,6000.00,45400.00,88000.00,60.00,25.00,34.00,227.00,no,Non-billable hours recognized at the standard rate
+2026-07,CI-PX-27,PX-27,Aldergate Public Works | Pilot Engagement,USD,hours_poc,held,0.00,0.00,0.00,-20000.00,20000.00,50000.00,0.00,0.00,0.00,100.00,yes,Terminated item carried with no movement
+2026-07,CI-PX-28,PX-28,Briarwood Hospitality | Pilot Engagement,USD,hours_poc,held,0.00,0.00,0.00,-22000.00,22000.00,60000.00,0.00,0.00,0.00,110.00,yes,Terminated item carried with no movement
+2026-07,CI-PX-29,PX-29,Copperline Rail | Expansion Scope,USD,hours_poc,posted,0.00,9400.00,9400.00,0.00,9400.00,40000.00,23.50,12.00,12.00,47.00,no,Item became effective; first revenue recognized; Hours logged before the effective date count toward completion
+2026-07,CI-PX-30,PX-30,Dovetail Furniture | Expansion Scope,USD,hours_poc,posted,0.00,7400.00,7400.00,0.00,7400.00,36000.00,20.60,9.00,9.00,37.00,no,Item became effective; first revenue recognized; Hours logged before the effective date count toward completion
+2026-07,CI-PX-31,PX-31,Elmswood Legal | Core Delivery,EUR,hours_poc,held,32602.74,38005.48,5402.74,4657.53,40800.00,68000.00,55.90,29.00,29.00,204.00,yes,29 billable h against plan
+2026-07,CI-PX-32,PX-32,Fernbank Municipal | Core Delivery,CAD,hours_poc,posted,46000.00,52800.00,6800.00,6000.00,52800.00,92000.00,57.40,34.00,34.00,264.00,yes,34 billable h against plan
+2026-07,CI-PX-33,PX-33,Gantry Shipping | Core Delivery,GBP,hours_poc,held,36146.34,41521.95,5375.61,4634.14,44800.00,76000.00,54.60,29.00,29.00,224.00,yes,29 billable h against plan
+2026-07,CI-PX-34,PX-34,Heathfield Pharma | Core Delivery,GBP,hours_poc,posted,30000.00,34600.00,4600.00,4000.00,34600.00,60000.00,57.70,23.00,23.00,173.00,yes,23 billable h against plan
+2026-07,CI-PX-37,PX-37,Kelso Marine | Core Delivery,USD,hours_poc,posted,33000.00,38800.00,5800.00,5000.00,38800.00,64000.00,60.60,29.00,29.00,194.00,yes,29 billable h against plan
+2026-07,CI-PX-38,PX-38,Larkspur Foods | Core Delivery,USD,hours_poc,posted,51000.00,59000.00,8000.00,7000.00,59000.00,100000.00,59.00,40.00,40.00,295.00,yes,Paid change request logged; base item estimate unchanged
+2026-07,CI-PX-38-CR,PX-38,Larkspur Foods | Core Delivery,USD,hours_poc,posted,0.00,1600.00,1600.00,0.00,1600.00,10000.00,16.00,8.00,8.00,8.00,no,Contract item appears on the schedule for the first time
+2026-07,CI-PX-39,PX-39,Mistport Utilities | Core Delivery,USD,hours_poc,posted,29000.00,33600.00,4600.00,4000.00,33600.00,56000.00,60.00,23.00,23.00,168.00,yes,23 billable h against plan
+2026-07,CI-PX-40,PX-40,Norwich Data Systems | Core Delivery,USD,hours_poc,held,38905.26,44917.89,6012.63,3438.59,50800.00,84000.00,53.50,34.00,34.00,254.00,yes,34 billable h against plan
+2026-07,CI-PX-41,PX-41,Orinda Wealth Partners | Core Delivery,USD,hours_poc,posted,27000.00,31600.00,4600.00,4000.00,31600.00,52000.00,60.80,23.00,23.00,158.00,yes,23 billable h against plan
+2026-07,CI-PX-42,PX-42,Pemberton Steelworks | Core Delivery,USD,hours_poc,held,45230.77,52615.38,7384.61,6461.54,57000.00,96000.00,54.80,40.00,40.00,285.00,yes,40 billable h against plan
+2026-07,CI-PX-43,PX-43,Thistledown Analytics | Core Delivery,USD,hours_poc,posted,0.00,7000.00,7000.00,0.00,7000.00,60000.00,11.70,35.00,35.00,35.00,no,Contract item appears on the schedule for the first time

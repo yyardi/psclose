@@ -41,6 +41,7 @@ class ItemContext:
     rmas: list[sqlite3.Row]
     prior: PriorState
     siblings: list[sqlite3.Row]
+    sibling_hours: dict[str, ItemHours] = field(default_factory=dict)
 
     @property
     def item_id(self) -> str:

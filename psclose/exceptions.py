@@ -11,6 +11,7 @@ and the figure may change once answered).
 
 from __future__ import annotations
 
+import json
 import sqlite3
 from dataclasses import asdict, dataclass, field
 from decimal import Decimal
@@ -110,6 +111,20 @@ def _hours(value: Decimal) -> str:
     return f"{value.normalize():f}" if value == value.to_integral() else f"{value:.2f}"
 
 
+def _rate(value: Decimal) -> str:
+    return f"{value:.0f}" if value == value.to_integral() else f"{value}"
+
+
+def _per_hour_value(close: ItemClose, policy: Policy) -> Decimal:
+    """Recognised value of one more billable hour on this item under its method."""
+    if close.method == methods.TM_HOURS:
+        return policy.tm_rate
+    if close.method == methods.HOURS_POC:
+        eac = close.outcome.facts.get("eac_hours") or dec(close.ctx.item["planned_hours"])
+        return close.ctx.contract / eac if eac else Decimal(0)
+    return Decimal(0)
+
+
 def item_checks(close: ItemClose, policy: Policy) -> list[CloseException]:
     ctx, out, facts = close.ctx, close.outcome, close.outcome.facts
     item, project = ctx.item_id, ctx.project_id
@@ -187,14 +202,21 @@ def item_checks(close: ItemClose, policy: Policy) -> list[CloseException]:
     alloc = {m for m in hours.methods if m.startswith("allocated_") or m == "single_open_item"}
     if alloc and len(ctx.siblings) > 1:
         others = [s["id"] for s in ctx.siblings if s["id"] != item]
+        project_hours = sum((h.billable_period for h in ctx.sibling_hours.values()), Decimal(0))
+        total_planned = sum((dec(s["planned_hours"]) for s in ctx.siblings), Decimal(0))
+        alt_hours = project_hours * dec(ctx.item["planned_hours"]) / total_planned if total_planned else hours.billable_period
+        swing = money((alt_hours - hours.billable_period) * _per_hour_value(close, policy))
         if "single_open_item" in alloc:
             why = f"because {', '.join(others)} is already fully recognised"
         else:
             why = "in proportion to the hours each item still has to deliver"
+        ratio = ":".join(_hours(dec(s["planned_hours"])) for s in ctx.siblings)
         add(
             "HOURS_ALLOCATED",
-            f"{_hours(hours.billable_period)} billable hours on {project} were placed on {item} {why}; "
-            f"the July timesheets name the project but not the item.",
+            f"{_hours(hours.billable_period)} of {_hours(project_hours)} billable hours on {project} were placed on "
+            f"{item} {why}; the {period} timesheets name the project but not the item. A plain split by planned "
+            f"hours ({ratio}) would give {item} {_hours(alt_hours.quantize(Decimal('0.01')))} h and move its "
+            f"recognised revenue by {_fmt(swing, cur)}.",
             close.delta,
             [item] + others,
             f"How should {project} hours be split between {item} and {', '.join(others)}?",
@@ -238,7 +260,7 @@ def item_checks(close: ItemClose, policy: Policy) -> list[CloseException]:
             a["id"] for a in ctx.adjustments
             if a["cr_type"] not in policy.eac_adjustment_types and period_start(period) <= (a["effective_date"] or "") <= period_end(period)
         ]
-        if paid_adj:
+        if paid_adj and prior.period is not None:
             add(
                 "PAID_ADJUSTMENT_NOTED",
                 f"Paid change request on {project} ({', '.join(paid_adj)}) is priced on its own contract item; "
@@ -289,7 +311,7 @@ def item_checks(close: ItemClose, policy: Policy) -> list[CloseException]:
         add(
             "NONBILLABLE_RECOGNIZED",
             f"{_hours(facts['nonbillable_period'])} non-billable hours on {item} were recognised at "
-            f"{policy.tm_rate}/h ({_fmt(facts['nonbillable_period'] * policy.tm_rate, cur)}), "
+            f"{_rate(policy.tm_rate)}/h ({_fmt(facts['nonbillable_period'] * policy.tm_rate, cur)}), "
             f"matching how prior periods were posted.",
             money(facts["nonbillable_period"] * policy.tm_rate),
             [item],
@@ -400,16 +422,20 @@ def ledger_checks(
     for rma in conn.execute("SELECT * FROM rma_event WHERE event_date <= ? AND status = 'posted' ORDER BY event_date", (end,)):
         if rma["id"] in applied:
             continue
+        try:
+            details = json.loads(rma["raw_details_json"] or "{}")
+        except json.JSONDecodeError:
+            details = {}
+        detail_text = "; ".join(f"{k.replace('_', ' ')}: {v}" for k, v in details.items()) or "no details"
         add(
             "UNAPPLIED_RMA", rma["project_id"], None,
             f"{rma['id']} ({rma['return_number']}, {rma['event_date']}, '{rma['reason']}') for "
-            f"{_fmt(rma['amount_native'], rma['currency'])} has no matching credit in the schedule; "
-            f"raw details: {rma['raw_details_json']}.",
+            f"{_fmt(rma['amount_native'], rma['currency'])} has no matching credit in the schedule ({detail_text}).",
             dec(rma["amount_native"]), rma["currency"], [rma["id"], rma["original_sales_order_id"] or ""],
             f"Should {rma['id']} reduce recognised revenue on {rma['project_id']}, and against which item?",
         )
 
-    for currency in sorted({c.ctx.currency for c in closes}):
+    for currency in sorted({c.ctx.currency for c in closes} - {"USD"}):
         rate = fx_latest(conn, currency, end)
         if rate is None:
             add("FX_RATE_STALE", None, None, f"No {currency} rate in fx_rate at all; USD views omit {currency}.", None, currency, [])

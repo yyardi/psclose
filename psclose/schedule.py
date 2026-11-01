@@ -108,6 +108,7 @@ def build_contexts(conn: sqlite3.Connection, period: str, policy: Policy) -> tup
             rmas=rmas.get(project["id"], []),
             prior=priors.get(item["id"], PriorState(None, ZERO, ZERO, None)),
             siblings=siblings.get(project["id"], [item]),
+            sibling_hours={s["id"]: hours.get(s["id"], ItemHours()) for s in siblings.get(project["id"], [item])},
         ))
     return contexts, problems
 

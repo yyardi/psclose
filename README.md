@@ -115,7 +115,7 @@ question rather than silently correcting history.
 
 ```
 psclose.toml          inputs and policy parameters
-psclose/              the package (about 1,900 lines)
+psclose/              the package (about 2,600 lines)
 tests/                22 tests, including the history replay and a synthetic August
 docs/                 recognition rules, controller questions, design notes
 data/                 the two databases as received

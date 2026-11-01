@@ -1,0 +1,27 @@
+[project]
+name = "psclose"
+version = "0.1.0"
+description = "Month-end revenue schedule close for a professional-services ledger"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+llm = ["anthropic>=0.50"]
+
+[project.scripts]
+psclose = "psclose.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["psclose"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

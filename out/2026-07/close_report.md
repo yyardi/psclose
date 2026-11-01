@@ -37,11 +37,11 @@ Grouped by cause. Amounts are the effect on the period in the item's own currenc
 - PX-21 / CI-PX-21A: 25.37 of 40 billable hours on PX-21 were placed on CI-PX-21A in proportion to the hours each item still has to deliver; the 2026-07 timesheets name the project but not the item. A plain split by planned hours (300:150) would give CI-PX-21A 26.67 h and move its recognized revenue by 260.16 USD. **5,073.17 USD**.
   Question: How should PX-21 hours be split between CI-PX-21A and CI-PX-21B?
 - PX-21 / CI-PX-21B: 14.63 of 40 billable hours on PX-21 were placed on CI-PX-21B in proportion to the hours each item still has to deliver; the 2026-07 timesheets name the project but not the item. A plain split by planned hours (300:150) would give CI-PX-21B 13.33 h and move its recognized revenue by -260.16 USD. **2,926.83 USD**.
-  Question: How should PX-21 hours be split between CI-PX-21B and CI-PX-21A?
+  Question: How should PX-21 hours be split between CI-PX-21A and CI-PX-21B?
 - PX-23 / CI-PX-23A: 16.69 of 26 billable hours on PX-23 were placed on CI-PX-23A in proportion to the hours each item still has to deliver; the 2026-07 timesheets name the project but not the item. A plain split by planned hours (320:160) would give CI-PX-23A 17.33 h and move its recognized revenue by 128.15 USD. **4,365.76 USD**.
   Question: How should PX-23 hours be split between CI-PX-23A and CI-PX-23B?
 - PX-23 / CI-PX-23B: 9.31 of 26 billable hours on PX-23 were placed on CI-PX-23B in proportion to the hours each item still has to deliver; the 2026-07 timesheets name the project but not the item. A plain split by planned hours (320:160) would give CI-PX-23B 8.67 h and move its recognized revenue by -128.15 USD. **2,434.24 USD**.
-  Question: How should PX-23 hours be split between CI-PX-23B and CI-PX-23A?
+  Question: How should PX-23 hours be split between CI-PX-23A and CI-PX-23B?
 
 **Approved sales order with no project and no contract item** (`ORPHAN_SALES_ORDER`)
 
@@ -72,19 +72,19 @@ Grouped by cause. Amounts are the effect on the period in the item's own currenc
 **Logged hours exceed the estimate at completion** (`HOURS_OVER_PLAN`)
 
 - PX-01 / CI-PX-01: CI-PX-01 has 539 billable hours against an estimate of 500; planned value 107,800.00 USD now exceeds the 100,000.00 USD contract. **7,800.00 USD**.
-  Question: Is a change order or a revised estimate expected for this overrun?
+  Question: Is a change order or a revised estimate expected on CI-PX-01 (539 h against 500)?
 - PX-03 / CI-PX-03: CI-PX-03 has 666 billable hours against an estimate of 600; planned value 133,200.00 USD now exceeds the 120,000.00 USD contract. **13,200.00 USD**.
-  Question: Is a change order or a revised estimate expected for this overrun?
+  Question: Is a change order or a revised estimate expected on CI-PX-03 (666 h against 600)?
 - PX-04 / CI-PX-04: CI-PX-04 has 372 billable hours against an estimate of 360; planned value 74,400.00 USD now exceeds the 72,000.00 USD contract. **2,400.00 USD**.
-  Question: Is a change order or a revised estimate expected for this overrun?
+  Question: Is a change order or a revised estimate expected on CI-PX-04 (372 h against 360)?
 - PX-06 / CI-PX-06: CI-PX-06 has 617 billable hours against an estimate of 560; planned value 123,400.00 USD now exceeds the 112,000.00 USD contract. **11,400.00 USD**.
-  Question: Is a change order or a revised estimate expected for this overrun?
+  Question: Is a change order or a revised estimate expected on CI-PX-06 (617 h against 560)?
 - PX-12-CR / CI-PX-12-CR: CI-PX-12-CR has 112 billable hours against an estimate of 100; planned value 22,400.00 USD now exceeds the 20,000.00 USD contract. **2,400.00 USD**.
-  Question: Is a change order or a revised estimate expected for this overrun?
+  Question: Is a change order or a revised estimate expected on CI-PX-12-CR (112 h against 100)?
 - PX-21-CR / CI-PX-21-CR: CI-PX-21-CR has 82 billable hours against an estimate of 80; planned value 16,400.00 USD now exceeds the 16,000.00 USD contract. **400.00 USD**.
-  Question: Is a change order or a revised estimate expected for this overrun?
+  Question: Is a change order or a revised estimate expected on CI-PX-21-CR (82 h against 80)?
 - PX-22-CR / CI-PX-22-CR: CI-PX-22-CR has 63 billable hours against an estimate of 60; planned value 12,600.00 USD now exceeds the 12,000.00 USD contract. **600.00 USD**.
-  Question: Is a change order or a revised estimate expected for this overrun?
+  Question: Is a change order or a revised estimate expected on CI-PX-22-CR (63 h against 60)?
 
 **Milestone confirmed; next tranche recognized** (`MILESTONE_RELEASE`)
 
@@ -279,16 +279,20 @@ Every row of the 2026-07 schedule, cumulative as in the ledger, with the period 
 3. Please provide the GBP/USD rate for 2026-07-31.
 4. How should PX-12 hours be split between CI-PX-12A and CI-PX-12B?
 5. How should PX-21 hours be split between CI-PX-21A and CI-PX-21B?
-6. How should PX-21 hours be split between CI-PX-21B and CI-PX-21A?
-7. How should PX-23 hours be split between CI-PX-23A and CI-PX-23B?
-8. How should PX-23 hours be split between CI-PX-23B and CI-PX-23A?
-9. Is SO-PX-20-ORPHAN a real order that needs a contract item, or a duplicate to void?
-10. Should RMA-PX-20 reduce recognized revenue on PX-20, and against which item?
-11. Was CI-PX-05 in 2026-06 meant to follow the standard rule, or was the posted figure a deliberate override?
-12. Is a change order or a revised estimate expected for this overrun?
-13. Should non-billable enablement hours on T&M engagements keep being recognized as revenue?
-14. Should hours logged before the effective date count toward completion, or be excluded?
-15. Can the OpenAir link for PX-18 be fixed so these rows arrive with a project id?
+6. How should PX-23 hours be split between CI-PX-23A and CI-PX-23B?
+7. Is SO-PX-20-ORPHAN a real order that needs a contract item, or a duplicate to void?
+8. Should RMA-PX-20 reduce recognized revenue on PX-20, and against which item?
+9. Was CI-PX-05 in 2026-06 meant to follow the standard rule, or was the posted figure a deliberate override?
+10. Is a change order or a revised estimate expected on CI-PX-01 (539 h against 500)?
+11. Is a change order or a revised estimate expected on CI-PX-03 (666 h against 600)?
+12. Is a change order or a revised estimate expected on CI-PX-04 (372 h against 360)?
+13. Is a change order or a revised estimate expected on CI-PX-06 (617 h against 560)?
+14. Is a change order or a revised estimate expected on CI-PX-12-CR (112 h against 100)?
+15. Is a change order or a revised estimate expected on CI-PX-21-CR (82 h against 80)?
+16. Is a change order or a revised estimate expected on CI-PX-22-CR (63 h against 60)?
+17. Should non-billable enablement hours on T&M engagements keep being recognized as revenue?
+18. Should hours logged before the effective date count toward completion, or be excluded?
+19. Can the OpenAir link for PX-18 be fixed so these rows arrive with a project id?
 
 ## Not on the PS schedule
 

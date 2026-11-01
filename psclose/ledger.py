@@ -167,3 +167,13 @@ def last_closed_period(conn: sqlite3.Connection) -> str | None:
 
 def row_count(conn: sqlite3.Connection, table: str) -> int:
     return conn.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
+
+
+def fx_latest(conn: sqlite3.Connection, currency: str, on_or_before: str) -> tuple[float, str] | None:
+    """Most recent to_usd rate on or before a date, with the date it was taken."""
+    row = conn.execute(
+        "SELECT to_usd, rate_date FROM fx_rate WHERE currency = ? AND rate_date <= ? "
+        "ORDER BY rate_date DESC LIMIT 1",
+        (currency, on_or_before),
+    ).fetchone()
+    return (row["to_usd"], row["rate_date"]) if row else None

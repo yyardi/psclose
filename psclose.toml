@@ -30,6 +30,10 @@ tm_count_nonbillable = true
 # Percent-complete snapshots that drive recognition must come from this source.
 poc_source = "delivery_lead_confirmation"
 
+# Timesheet notes containing this text mark hours logged before the scope is contractually
+# live. An item whose only hours carry this tag stays open until its effective date.
+pre_effective_note = "pre-effective"
+
 # When a project has several open items and the timesheet does not say which one,
 # split the hours this way. Options: remaining_planned_hours, planned_hours.
 hours_allocation = "remaining_planned_hours"

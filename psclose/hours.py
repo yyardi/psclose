@@ -28,7 +28,14 @@ class ItemHours:
     all_cum: Decimal = ZERO
     billable_period: Decimal = ZERO
     all_period: Decimal = ZERO
+    pre_effective_cum: Decimal = ZERO
+    pre_effective_period: Decimal = ZERO
     methods: set[str] = field(default_factory=set)
+
+    @property
+    def started(self) -> bool:
+        """Approved billable hours exist that ops did not tag as pre-effective."""
+        return self.billable_cum - self.pre_effective_cum > 0
 
 
 def _dec(value: float | int | str | None) -> Decimal:
@@ -165,18 +172,19 @@ def _attribute_one(
     return [(item_id, weight / total, method) for item_id, weight in weights.items()]
 
 
-def hours_by_item(conn: sqlite3.Connection, period: str) -> dict[str, ItemHours]:
+def hours_by_item(conn: sqlite3.Connection, period: str, pre_effective_note: str = "pre-effective") -> dict[str, ItemHours]:
     """Cumulative and in-period approved hours per contract item at the end of `period`."""
     rows = conn.execute(
         """
         SELECT a.contract_item_id AS item, a.method, t.billable, t.entry_date,
+               CASE WHEN LOWER(COALESCE(t.notes, '')) LIKE '%' || ? || '%' THEN 1 ELSE 0 END AS pre_effective,
                SUM(t.hours * a.share) AS hours
         FROM timesheet_attribution a
         JOIN timesheet_entry t ON t.id = a.timesheet_id
         WHERE t.entry_date <= ? AND t.approval_status = 'Approved'
-        GROUP BY a.contract_item_id, a.method, t.billable, t.entry_date
+        GROUP BY a.contract_item_id, a.method, t.billable, t.entry_date, pre_effective
         """,
-        (period_end(period),),
+        (pre_effective_note.lower(), period_end(period)),
     )
     start = period_start(period)
     out: dict[str, ItemHours] = {}
@@ -193,6 +201,10 @@ def hours_by_item(conn: sqlite3.Connection, period: str) -> dict[str, ItemHours]
             ih.billable_cum += hours
             if in_period:
                 ih.billable_period += hours
+            if r["pre_effective"]:
+                ih.pre_effective_cum += hours
+                if in_period:
+                    ih.pre_effective_period += hours
     return out
 
 

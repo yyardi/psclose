@@ -23,6 +23,7 @@ class Policy:
     tm_count_nonbillable: bool = True
     poc_source: str = "delivery_lead_confirmation"
     hours_allocation: str = "remaining_planned_hours"
+    pre_effective_note: str = "pre-effective"
 
     @classmethod
     def from_mapping(cls, data: dict[str, Any]) -> "Policy":
